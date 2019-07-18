@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Globomantics.Models;
 using Globomantics.Services;
+using Globomantics.Filters;
 
 namespace Globomantics.Controllers
 {
     [Route("api/[controller]")]
+    [RateExceptionFilter]
     public class RatesController : Controller
     {
         private IRateService rateService;
