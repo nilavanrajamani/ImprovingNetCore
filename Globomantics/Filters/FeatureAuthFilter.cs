@@ -24,7 +24,7 @@ namespace Globomantics.Filters
         {
             if (!featureService.IsFeatureActive(featureName))
             {
-                context.Result = new RedirectToRouteResult("Index", "Home", null);
+                context.Result = new RedirectToActionResult("Index", "Home", null);
             }
         }
     }
