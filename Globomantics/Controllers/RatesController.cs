@@ -10,7 +10,6 @@ using Globomantics.Filters;
 
 namespace Globomantics.Controllers
 {
-    [Route("api/[controller]")]
     [RateExceptionFilter]
     public class RatesController : Controller
     {
@@ -22,7 +21,8 @@ namespace Globomantics.Controllers
         }
 
         [HttpGet]
-        [Route("mortgage")]
+        [Route("api/rates/mortgage")]
+        [Route("api/{version: versionCheck(1)}/rates/mortgage")]
         public IActionResult GetMortgageRates()
         {
             return Ok(rateService.GetMortgageRates());
